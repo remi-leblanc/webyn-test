@@ -1,6 +1,6 @@
 import { Component, inject, ViewChild } from '@angular/core';
-import { TrafficEndpoint } from '../traffic-endpoint';
-import { TrafficService } from '../traffic-service';
+import { TrafficEndpoint } from './traffic-endpoint';
+import { TrafficService } from './traffic-service';
 import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 
@@ -16,7 +16,6 @@ export class Dashboard {
 
 	@ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
 
-	// Pie
 	public pieChartOptions: ChartConfiguration['options'] = {
 		plugins: {
 			legend: {

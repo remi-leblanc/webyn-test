@@ -3,9 +3,16 @@
 
   ## Installation
 
+Requirement:
+
+ - Node.js
+ - PHP 8.2+
+ - Composer
+ - Symfony CLI
+ - A MySQL server
+
 ### API
 
-Requirement: symfony CLI
 
     cd ./api/
 
@@ -19,6 +26,8 @@ Edit DATABASE_URL in .env
 
     php bin/console doctrine:migrations:migrate
 
+	php bin/console doctrine:fixtures:load
+
 Enable https to allow CORS:
 
     symfony server:ca:install
@@ -30,8 +39,6 @@ Start the dev server
 #### For testing
 
 Edit DATABASE_URL in .env.test
-
-    php bin/console doctrine:fixtures:load
 
     php bin/console --env=test doctrine:database:create
 
@@ -46,7 +53,9 @@ Run the tests
 ### Client
 
     cd ./client/
-
+    
+	npm install -g @angular/cli
+	
     npm install
 
     npm start
